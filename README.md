@@ -31,19 +31,16 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img width="965" height="505" alt="image" src="https://github.com/user-attachments/assets/2677a41a-ec5b-44da-bd35-480d139cedf8" />
 </p>
 <p>
-Log in to Windows 11 VM and Linux VM (Ubuntu). Install Wireshark from the Windows 11 VM. Google, https://www.wireshark.org, and install. This is the protocol analyzer and lets us observe the traffic between the two Virtual Machines. Now we will start a packet capture, highlight the "Ethernet", and click on the sharkfin. Now we can see all of the network traffic on the backend. Filter it for ICMP traffic to test the connectivity between the two Virtual Machines.   </p>
-<br />
+I logged into both the Windows 11 VM and the Linux (Ubuntu) VM to analyze network communication between the two systems. From the Windows 11 VM, I installed Wireshark, a leading network protocol analyzer, by downloading it from wireshark.org. Using Wireshark, I initiated a packet capture on the active Ethernet interface by selecting it and clicking the shark fin icon to begin monitoring network activity traffic between both virtual machines. To verify the connectivity, I applied an ICMP filter to only view ICMP traffic, successfully confirming network communication between the Windows 11 and Ubuntu virtual machines.<br />
 
 <p>
 <img width="1177" height="615" alt="image" src="https://github.com/user-attachments/assets/b5680813-e502-4c50-b55e-013b47962f91" />
 </p>
 <p>
-Get the Linux VM private IP Address, open up PowerShell from Windows 11 VM, and we will attempt to ping the Linux VM from the Windows VM and inspect it from Wireshark. The "Destination" and "Source" fall under Layer 2 of the OSI Model. It's the MAC Address of this computer. If you expand Internet Protocol, you will discover Layer 3 of the OSI Model, and it's the network layer. </p>
-<br />
+Next, I retrieved the Linux (Ubuntu) VM’s private IP address and opened PowerShell on the Windows 11 VM to perform a ping test to the Linux VM. I used Wireshark to monitor the packet exchange and analyze the network communication between the two systems. Within the captured data, the "Source" and "Destination" fields represented Layer 2 of the OSI Model (Data Link Layer), displaying the MAC addresses of the communicating devices. By expanding the Internet Protocol (IP) section, I identified Layer 3 of the OSI Model (Network Layer), which defines the logical addressing and routing of packets across the network.<br />
 
 <p>
 <img width="1182" height="596" alt="image" src="https://github.com/user-attachments/assets/06ea63db-6bf1-49b1-9016-a733fbf42af2" />
 </p>
 <p>
-Now we will make a secure connection from one Virtual Machine to another. We will make an SSH from a Windows VM to a Linux VM. Go back to Wireshark and filter traffic for SSH. Open PowerShell from Windows, and type "(ssh) (username of vm@private IP address of Linux VM)" to ping for the SSH traffic. If you type host hostname, ID, and any general information, we should now be able to see Linux information even though we are on the Windows VM. </p>
-<br />
+To establish a secure connection between the two virtual machines, I initiated an SSH (Secure Shell) session from the Windows 11 VM to the Linux (Ubuntu) VM. Using Wireshark, I applied an SSH traffic filter to see the encrypted communication. From PowerShell on the Windows 11 VM, I executed the command ssh <username>@<Linux_VM_Private_IP> to initiate the secure connection. Once connected, I ran commands such as "hostname," "id," and other general Linux commands to verify the remote access.<br />
