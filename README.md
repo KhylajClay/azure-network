@@ -20,10 +20,10 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Log in to Remote Desktop Protocol and create a Windows VM and a Linux VM
+- Install Wireshark from the Windows VM and start capturing packets
+- Copy Linux VM private IP Address to ping from Windows VM using PowerShell
+- Filter traffic for SSH and discover Linux information from PowerShell after pinging the Linux VM
 
 <h2>Actions and Observations</h2>
 
